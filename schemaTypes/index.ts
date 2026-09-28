@@ -1,1 +1,4 @@
-export const schemaTypes = []
+import {serviceType} from './service'
+import {seoType} from './seo'
+
+export const schemaTypes = [serviceType, seoType]
