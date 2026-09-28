@@ -70,6 +70,14 @@ export const serviceType = defineType({
   initialValue: 'right',
 }),
 
+defineField({
+  name: 'contentSections',
+  title: 'Content Sections',
+  type: 'array',
+  description: 'Add and arrange the main content sections for this service page.',
+  of: [{type: 'contentSection'}],
+}),
+
     defineField({
       name: 'deliverables',
       title: 'Services / Deliverables',
