@@ -83,5 +83,57 @@ export const serviceType = defineType({
       type: 'seo',
       description: 'Controls the page title and description used by search engines.',
     }),
+    defineField({
+	name: 'contentHeading',
+	title: 'Content Heading',
+	type: 'string',
+	description: 'Main heading below the page banner.',
+}),
+
+defineField({
+	name: 'contentLead',
+	title: 'Lead Paragraph',
+	type: 'text',
+	rows: 3,
+	description: 'Introductory paragraph displayed prominently below the heading.',
+}),
+
+defineField({
+	name: 'contentParagraphs',
+	title: 'Content Paragraphs',
+	type: 'array',
+	of: [{type: 'text', rows: 3}],
+	description: 'Main body paragraphs displayed before the Services / Deliverables list.',
+}),
+
+defineField({
+	name: 'contentClosing',
+	title: 'Closing Paragraph',
+	type: 'text',
+	rows: 4,
+	description: 'Optional paragraph displayed after the Services / Deliverables list.',
+}),
+defineField({
+  name: 'ctaHeading',
+  title: 'CTA Heading',
+  type: 'string',
+  description: 'Heading for the call-to-action section at the bottom of the page.',
+}),
+
+defineField({
+  name: 'ctaParagraphs',
+  title: 'CTA Paragraphs',
+  type: 'array',
+  of: [{type: 'text', rows: 3}],
+  description: 'Supporting paragraphs in the call-to-action section.',
+}),
+
+defineField({
+  name: 'ctaButtonText',
+  title: 'CTA Button Text',
+  type: 'string',
+  initialValue: 'Book a Free Consultation',
+}),
   ],
+  
 })
