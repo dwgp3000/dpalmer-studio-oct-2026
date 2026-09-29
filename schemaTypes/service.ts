@@ -85,42 +85,6 @@ defineField({
       of: [{type: 'string'}],
     }),
 
-    defineField({
-      name: 'seo',
-      title: 'SEO & Search',
-      type: 'seo',
-      description: 'Controls the page title and description used by search engines.',
-    }),
-    defineField({
-	name: 'contentHeading',
-	title: 'Content Heading',
-	type: 'string',
-	description: 'Main heading below the page banner.',
-}),
-
-defineField({
-	name: 'contentLead',
-	title: 'Lead Paragraph',
-	type: 'text',
-	rows: 3,
-	description: 'Introductory paragraph displayed prominently below the heading.',
-}),
-
-defineField({
-	name: 'contentParagraphs',
-	title: 'Content Paragraphs',
-	type: 'array',
-	of: [{type: 'text', rows: 3}],
-	description: 'Main body paragraphs displayed before the Services / Deliverables list.',
-}),
-
-defineField({
-	name: 'contentClosing',
-	title: 'Closing Paragraph',
-	type: 'text',
-	rows: 4,
-	description: 'Optional paragraph displayed after the Services / Deliverables list.',
-}),
 defineField({
   name: 'ctaHeading',
   title: 'CTA Heading',
@@ -142,6 +106,13 @@ defineField({
   type: 'string',
   initialValue: 'Book a Free Consultation',
 }),
+
+defineField({
+      name: 'seo',
+      title: 'SEO & Search',
+      type: 'seo',
+      description: 'Controls the page title and description used by search engines.',
+    }),
   ],
   
 })
