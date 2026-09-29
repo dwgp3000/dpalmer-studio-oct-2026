@@ -31,6 +31,21 @@ export const serviceType = defineType({
       description: 'Used for service cards and other short summaries.',
       validation: (rule) => rule.required(),
     }),
+    defineField({
+  name: 'icon',
+  title: 'Service Icon',
+  type: 'string',
+  description: 'Icon used when this service appears in cards and other listings.',
+  options: {
+    list: [
+      {title: 'Target', value: 'target'},
+      {title: 'Tree Structure', value: 'tree-structure'},
+      {title: 'Chart Line Up', value: 'chart-line-up'},
+    ],
+    layout: 'radio',
+  },
+  validation: (rule) => rule.required(),
+}),
 
     defineField({
       name: 'heroHeading',

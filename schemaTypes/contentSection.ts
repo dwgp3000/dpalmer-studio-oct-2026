@@ -22,11 +22,75 @@ export const contentSectionType = defineType({
     }),
 
     defineField({
+  name: 'contentType',
+  title: 'Content Type',
+  type: 'string',
+  options: {
+    list: [
+      {title: 'Standard', value: 'standard'},
+      {title: 'Rich Text', value: 'richText'},
+    ],
+    layout: 'radio',
+  },
+  initialValue: 'standard',
+}),
+
+
+    defineField({
       name: 'paragraphs',
       title: 'Paragraphs',
       type: 'array',
       of: [{type: 'text', rows: 3}],
+      hidden: ({parent}) => parent?.contentType === 'richText',
     }),
+
+    
+    defineField({
+  name: 'items',
+  title: 'List Items',
+  type: 'array',
+  of: [{type: 'string'}],
+  description: 'Optional list displayed within this content section.',
+  hidden: ({parent}) => parent?.contentType === 'richText',
+}),
+
+defineField({
+  name: 'richText',
+  title: 'Rich Text',
+  type: 'array',
+  of: [
+    {
+      type: 'block',
+      styles: [{title: 'Normal', value: 'normal'}],
+      lists: [
+        {title: 'Bullet', value: 'bullet'},
+        {title: 'Numbered', value: 'number'},
+      ],
+      marks: {
+        decorators: [
+          {title: 'Bold', value: 'strong'},
+          {title: 'Italic', value: 'em'},
+        ],
+        annotations: [
+          {
+            name: 'link',
+            type: 'object',
+            title: 'Link',
+            fields: [
+              {
+                name: 'href',
+                type: 'url',
+                title: 'URL',
+              },
+            ],
+          },
+        ],
+      },
+    },
+  ],
+  hidden: ({parent}) => parent?.contentType !== 'richText',
+}),
+
 
     defineField({
       name: 'showDeliverables',
