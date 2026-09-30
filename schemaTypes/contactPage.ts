@@ -59,6 +59,26 @@ export const contactPageType = defineType({
     }),
 
     defineField({
+  name: 'bookingText',
+  title: 'Booking Text',
+  type: 'string',
+  description: 'Short message displayed above the calendar booking button.',
+}),
+
+defineField({
+  name: 'bookingButtonText',
+  title: 'Booking Button Text',
+  type: 'string',
+}),
+
+defineField({
+  name: 'bookingUrl',
+  title: 'Booking URL',
+  type: 'url',
+  description: 'External calendar or appointment scheduling link.',
+}),
+
+    defineField({
       name: 'servicesHeading',
       title: 'Services Heading',
       type: 'string',
