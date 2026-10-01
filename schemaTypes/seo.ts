@@ -24,5 +24,12 @@ export const seoType = defineType({
       validation: (rule) =>
         rule.max(165).warning('Meta descriptions are usually best kept under about 155–165 characters.'),
     }),
+
+    defineField({
+      name: 'openGraphImage',
+      title: 'Open Graph Image',
+      type: 'image',
+      description: 'Image used when this page is shared on social media.',
+    }),
   ],
 })

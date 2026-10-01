@@ -78,5 +78,6 @@ export const siteSettingsType = defineType({
       type: 'seo',
       description: 'Default search information used when a page does not provide its own SEO settings.',
     }),
+
   ],
 })
